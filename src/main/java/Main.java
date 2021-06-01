@@ -1,3 +1,4 @@
+import model.Cats;
 import service.CatService;
 
 import javax.swing.*;
@@ -20,10 +21,12 @@ public class Main {
                 case 0:
                     CatService.watchCats();
                     break;
-
+                case 1:
+                    Cats cats = new Cats();
+                    CatService.getFavoriteCats(cats.getApiKey());
                 default:
                     break;
             }
-        } while (menuOption != 1);
+        } while (menuOption != 2);
     }
 }
